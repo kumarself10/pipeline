@@ -12,20 +12,20 @@ pool:
 steps:
 - script: echo Hello, world!
   displayName: 'Run a one-line script'
-  - task: AzureResourceManagerTemplateDeployment@3
-    inputs:
-      deploymentScope: 'Resource Group'
-      azureResourceManagerConnection: 'Azure Pass - Sponsorship(22cdd783-a778-4c57-b130-76596448b6a5)'
-      subscriptionId: '22cdd783-a778-4c57-b130-76596448b6a5'
-      action: 'Create Or Update Resource Group'
-      resourceGroupName: 'azurerg'
-      location: 'East US'
-      templateLocation: 'URL of the file'
-      csmFileLink: 'https://raw.githubusercontent.com/kumarself10/pipeline/main/CreateWebApp/azuredeploy.json'
-      deploymentMode: 'Incremental'
+- task: AzureResourceManagerTemplateDeployment@3
+  inputs:
+    deploymentScope: 'Resource Group'
+    azureResourceManagerConnection: 'Azure Pass - Sponsorship(22cdd783-a778-4c57-b130-76596448b6a5)'
+    subscriptionId: '22cdd783-a778-4c57-b130-76596448b6a5'
+    action: 'Create Or Update Resource Group'
+    resourceGroupName: 'azurerg'
+    location: 'East US'
+    templateLocation: 'URL of the file'
+    csmFileLink: 'https://raw.githubusercontent.com/kumarself10/pipeline/main/CreateWebApp/azuredeploy.json'
+    deploymentMode: 'Incremental'
 
 - script: |
     echo Add other tasks to build, test, and deploy your project.
     echo See https://aka.ms/yaml
   displayName: 'Run a multi-line script'
-
+  
